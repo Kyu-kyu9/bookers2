@@ -1,0 +1,20 @@
+<h2 class="mt-3">New book</h2>
+
+<% if book.errors.any? %>
+ <%= book.errors.count %>件のerrorが発生しました
+ <% book.errors.full_messages.each do |message| %>
+ <%= message %>
+ <% end %>
+<% end %>
+
+  <%= form_with model: book do |f| %>
+    <div>
+    <label for="book_title">Title</label>
+    </div>
+      <%= f.text_field :title %>
+    <div>
+    <label for="book_body">Opinion</label>
+    </div>
+      <%= f.text_area :body %>
+    <%= f.submit 'Create Book',class:"btn btn-success" %>
+  <% end %>
