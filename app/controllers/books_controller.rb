@@ -20,15 +20,16 @@ class BooksController < ApplicationController
    end
     
   def index
-    @user = current_user
-        @books = Book.all
-        @book = Book.new
     
+    @books = Book.all
+    @book = Book.new
+    @user = current_user
+        
   end
 
   def show
     @books=Book.find(params[:id])
-    
+    @comment = BookComment.new
     @book = Book.new
     @user=User.find(@books.user_id)
      

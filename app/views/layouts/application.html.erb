@@ -2,14 +2,11 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
   <head>
     <title>Bookers2</title>
-    <meta name="csrf-param" content="authenticity_token">
-    <meta name="csrf-token" content="U97elZj4EPXQrWBXdvvPOyyCYygnFPsgNi29Nx66RlaV_nBEFvqzewsrABbkPY23-ewbf-sc0bn4oPRXSjWZ4g">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <%= csrf_meta_tags %>
@@ -25,90 +22,90 @@
               <% if user_signed_in? %>
             <li>
         <%= link_to   user_path(current_user.id),class: "text-light" do %>
-        
+
         <i class="fas fa-home"></i>
         Homes
         <% end %>
-        
+
       </li>
-      
+
       <li>
-        
+
         <%= link_to users_path,class: "text-light" do %>
          <i class="fas fa-users"></i>
          Users
         <% end %>
-        
+
       </li>
 
       <li>
-        
+
         <%= link_to books_path,class: "text-light" do %>
         <i class="fas fa-book-open"></i>
         Books
         <% end %>
-        
+
       </li>
-      
+
       <li>
-        
+
         <%= link_to  destroy_user_session_path,class: "text-light", method: :delete do %>
         <i class="fas fa-sign-out-alt"></i>
         Log out
         <% end %>
-       
+
       </li>
 
     <% else %>
       <li>
-        
+
         <%= link_to  root_path,class: "text-light" do %>
         <i class="fas fa-home">
         </i>
         Homes
         <% end %>
-       
+
       </li>
 
       <li>
-       
+
         <%= link_to about_path,class: "text-light"  do %>
         <i class="fas fa-link">
         </i>
         About
         <% end %>
-        
+
       </li>
 
       <li>
-       
+
         <%= link_to new_user_registration_path,class: "text-light"  do %>
         <i class="fas fa-user-plus"></i>
         Sign up
         <% end %>
-       
+
       </li>
 
       <li>
-        
+
         <%= link_to new_user_session_path,class: "text-light"  do %>
         <i class="fas fa-sign-in-alt"></i>
           Log in
           <% end %>
-        
+
       </li>
     <% end %>
-    
+
     </ul>
     </div>
     </div>
-    
+
     </nav>
-     
+
   </header>
    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  
+
     <%= yield %>
     <footer>
       <div classclass="container mt-5">
